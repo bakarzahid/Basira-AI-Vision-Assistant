@@ -6,13 +6,14 @@ Basira is an assistive technology solution designed to empower the visually impa
 
 ## 🛠️ Tech Stack
 - **Frontend:** Flutter (Dart)
-- **Backend:** Node.js & Supabase (PostgreSQL)
+- **Backend:** Node.js
+- **Database** Supabase (PostgreSQL)
 - **Vision Engine:** YOLO 26 NVM (Native Vision Model)
 - **Documentation:** IEEE Standards
 
 ## 📂 Repository Structure
-- `/Documentation`: Project Report (4 Chapters) & Feature Form.
-- `/Design_Models`: UML Diagrams (Use Case, ERD, Class, Sequence).
+- `/Documentation`: Project Report (5 Chapters) & Feature Form.
+- `/Design_Models`: UML Diagrams (Use-Case, Architecture, Domain-Model, ERD, Class, Sequence, and DFD (level 0)).
 - `/Prototype`: High-fidelity UI screens and accessibility mockups.
 
 ## 👥 Project Team
