@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basira — All App Screens</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#080d18;color:#e0e6f0;padding:24px}
+  h1{font-size:22px;font-weight:500;color:#E6F1FB;margin-bottom:4px}
+  .subtitle{font-size:13px;color:#5F5E5A;margin-bottom:28px}
+  .top-bar{display:flex;align-items:center;gap:16px;margin-bottom:28px}
+  .logo{width:38px;height:38px;border-radius:10px;background:#185FA5;display:flex;align-items:center;justify-content:center;font-size:20px}
+  .dl-all{padding:10px 20px;background:#185FA5;color:#E6F1FB;border:none;border-radius:8px;font-size:13px;cursor:pointer;margin-left:auto}
+  .dl-all:hover{background:#0C447C}
+  .group-label{font-size:11px;color:#5F5E5A;letter-spacing:.06em;margin-bottom:12px;text-transform:uppercase}
+  .screens-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;margin-bottom:32px}
+  .screen-card{background:#0d1525;border-radius:16px;border:0.5px solid #1a2a3a;overflow:hidden}
+  .card-header{padding:12px 16px;display:flex;align-items:center;justify-content:space-between;border-bottom:0.5px solid #1a2a3a}
+  .card-title{font-size:13px;font-weight:500;color:#D3D1C7}
+  .card-num{font-size:11px;color:#5F5E5A;background:#071525;padding:2px 8px;border-radius:6px}
+  .phone-wrap{display:flex;justify-content:center;padding:20px 16px}
+  .phone{width:220px;height:440px;border-radius:30px;border:5px solid #2C2C2A;background:#0a0a0a;position:relative;overflow:hidden;box-shadow:0 0 0 1.5px #444441}
+  .pscreen{width:100%;height:100%;border-radius:25px;overflow:hidden;position:relative}
+  .notch{width:60px;height:16px;background:#2C2C2A;border-radius:0 0 10px 10px;position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:10}
+  .dl-btn{display:block;width:calc(100% - 32px);margin:0 16px 16px;padding:10px;background:#0F1620;border:0.5px solid #185FA5;border-radius:10px;color:#85B7EB;font-size:12px;cursor:pointer;text-align:center}
+  .dl-btn:hover{background:#0C447C;color:#E6F1FB}
+  .wide-card{grid-column:1 / -1}
+  .admin-wrap{padding:16px}
+  .admin-frame{border-radius:12px;overflow:hidden;border:0.5px solid #1a2a3a}
+  .admin-bar{background:#042C53;padding:10px 16px;display:flex;align-items:center;justify-content:space-between}
+  .admin-body{display:grid;grid-template-columns:140px 1fr}
+  .admin-sidebar{background:#071525;padding:10px 0;border-right:0.5px solid #1a2a3a}
+  .a-item{padding:9px 14px;display:flex;align-items:center;gap:7px;font-size:12px}
+  .a-item.active{background:#0C447C;border-left:2px solid #378ADD;color:#E6F1FB}
+  .a-item:not(.active){color:#5F5E5A;border-left:2px solid transparent}
+  .admin-content{background:#0a0f1a;padding:14px}
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+  .stat{background:#0F1620;border-radius:8px;padding:10px;border:0.5px solid #1a2a3a}
+  .stat-label{font-size:9px;color:#5F5E5A;margin-bottom:3px}
+  .stat-val{font-size:18px;font-weight:500;color:#E6F1FB}
+  .stat-sub{font-size:9px;color:#5DCAA5}
+  .tag{display:inline-block;font-size:10px;padding:2px 8px;border-radius:5px;margin:2px 2px 2px 0}
+  .tag.blue{background:#0C447C;color:#85B7EB}
+  .tag.grn{background:#1D4E34;color:#9FE1CB}
+  .tag.red{background:#A32D2D;color:#FCEBEB}
+  .tag.amb{background:#3B2E00;color:#FAC775}
+  .info-bar{padding:12px 16px;background:#071525;border-top:0.5px solid #1a2a3a}
+  .info-tags{display:flex;flex-wrap:wrap;gap:4px}
+  .info-desc{font-size:11px;color:#888780;margin-bottom:8px;line-height:1.5}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="logo">👁</div>
+  <div>
+    <h1>Basira — All 10 App Screens</h1>
+    <p class="subtitle">FYP · Riphah International University · Naqeeb Ashraf & Muhammad Abubakar</p>
+  </div>
+  <button class="dl-all" onclick="downloadAll()">⬇ Download All (PNG)</button>
+</div>
+
+<div class="group-label">Group A — User-facing screens (S1–S8)</div>
+<div class="screens-grid" id="grid-a">
+
+  <!-- S1 Login -->
+  <div class="screen-card" id="card-0">
+    <div class="card-header"><span class="card-title">S1 — Login / Signup</span><span class="card-num">1/10</span></div>
+    <div class="phone-wrap">
+      <div class="phone" id="phone-0">
+        <div class="pscreen" style="background:linear-gradient(160deg,#042C53 0%,#185FA5 100%)">
+          <div class="notch"></div>
+          <div style="padding:48px 18px 24px;display:flex;flex-direction:column;align-items:center;height:100%;box-sizing:border-box">
+            <div style="width:56px;height:56px;border-radius:16px;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;margin-bottom:10px;font-size:26px">👁</div>
+            <p style="font-size:20px;font-weight:500;color:#E6F1FB;margin:0 0 2px">Basira</p>
+            <p style="font-size:11px;color:#B5D4F4;margin:0 0 28px">Your digital eye</p>
+            <div style="width:100%;margin-bottom:12px">
+              <div style="background:rgba(255,255,255,.12);border-radius:12px;padding:12px 14px;color:#B5D4F4;font-size:12px;margin-bottom:8px">📧 Email address</div>
+              <div style="background:rgba(255,255,255,.12);border-radius:12px;padding:12px 14px;color:#B5D4F4;font-size:12px">🔒 Password</div>
+            </div>
+            <button style="width:100%;padding:14px;background:#E6F1FB;color:#042C53;border:none;border-radius:12px;font-size:14px;font-weight:500;margin-bottom:8px">Login</button>
+            <button style="width:100%;padding:14px;background:rgba(255,255,255,.1);color:#E6F1FB;border:1px solid rgba(255,255,255,.25);border-radius:12px;font-size:14px;font-weight:500">Create Account</button>
+            <p style="font-size:10px;color:#85B7EB;margin-top:auto;text-align:center">Riphah International University</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="info-bar">
+      <p class="info-desc">High-contrast entry screen with large login & signup buttons for blind users.</p>
+      <div class="info-tags"><span class="tag blue">High contrast</span><span class="tag grn">Large buttons</span><span class="tag blue">Voice-ready</span></div>
+    </div>
+    <button class="dl-btn" onclick="downloadScreen(0,'S1_Login')">⬇ Download S1 — Login</button>
+  </div>
+
+  <!-- S2 Dashboard -->
+  <div class="screen-card" id="card-1">
+    <div class="card-header"><span class="card-title">S2 — Main Dashboard</span><span class="card-num">2/10</span></div>
+    <div class="phone-wrap">
+      <div class="phone" id="phone-1">
+        <div class="pscreen" style="background:#0a0a14">
+          <div class="notch"></div>
+          <div style="padding:42px 14px 14px;display:flex;flex-direction:column;height:100%;box-sizing:border-box">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+              <div><p style="font-size:10px;color:#888780;margin:0">Welcome back</p><p style="font-size:14px;font-weight:500;color:#F1EFE8;margin:0">Naqeeb</p></div>
+              <div style="width:30px;height:30px;border-radius:50%;background:#185FA5;display:flex;align-items:center;justify-content:center;font-size:14px">👤</div>
+            </div>
+            <p style="font-size:10px;color:#5F5E5A;margin:0 0 12px">📍 DHA Phase 6, Lahore ✓</p>
+            <button style="width:100%;height:96px;background:#185FA5;border:none;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;margin-bottom:10px">
+              <span style="font-size:28px">📷</span>
+              <span style="font-size:17px;font-weight:500;color:#E6F1FB">Start Detection</span>
+            </button>
+            <button style="width:100%;height:96px;background:#A32D2D;border:none;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;margin-bottom:10px">
+              <span style="font-size:28px">🚨</span>
+              <span style="font-size:17px;font-weight:500;color:#FCEBEB">SOS Alert</span>
+            </button>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+              <button style="padding:12px 8px;background:#1D4E34;border:none;border-radius:14px;color:#9FE1CB;font-size:12px;display:flex;flex-direction:column;align-items:center;gap:3px">📞 Contacts</button>
+              <button style="padding:12px 8px;background:#3B2E00;border:none;border-radius:14px;color:#FAC775;font-size:12px;display:flex;flex-direction:column;align-items:center;gap:3px">💬 Ask AI</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="info-bar">
+      <p class="info-desc">Giant Start Detection & SOS buttons for easy one-tap use. GPS status shown.</p>
+      <div class="info-tags"><span class="tag grn">Giant buttons</span><span class="tag red">SOS</span><span class="tag blue">GPS</span></div>
+    </div>
+    <button class="dl-btn" onclick="downloadScreen(1,'S2_Dashboard')">⬇ Download S2 — Dashboard</button>
+  </div>
+
+  <!-- S3 Camera -->
+  <div class="screen-card" id="card-2">
+    <div class="card-header"><span class="card-title">S3 — Camera Detection</span><span class="card-num">3/10</span></div>
+    <div class="phone-wrap">
+      <div class="phone" id="phone-2">
+        <div class="pscreen" style="background:#0d1117">
+          <div class="notch"></div>
+          <div style="padding:42px 0 0;height:100%;box-sizing:border-box;display:flex;flex-direction:column">
+            <div style="background:#1a1f2e;flex:1;position:relative;overflow:hidden">
+              <div style="position:absolute;top:30px;left:24px;width:76px;height:84px;border:2px solid #5DCAA5;border-radius:3px">
+                <span style="background:#5DCAA5;color:#04342C;font-size:8px;padding:1px 4px;position:absolute;top:-12px;left:0;border-radius:2px;white-space:nowrap">person 91%</span>
+              </div>
+              <div style="position:absolute;top:84px;left:124px;width:62px;height:48px;border:2px solid #378ADD;border-radius:3px">
+                <span style="background:#378ADD;color:#042C53;font-size:8px;padding:1px 4px;position:absolute;top:-12px;left:0;border-radius:2px;white-space:nowrap">chair 84%</span>
+              </div>
+              <div style="position:absolute;top:148px;left:48px;width:90px;height:44px;border:2px solid #EF9F27;border-radius:3px">
+                <span style="background:#EF9F27;color:#412402;font-size:8px;padding:1px 4px;position:absolute;top:-12px;left:0;border-radius:2px;white-space:nowrap">car 76%</span>
+              </div>
+              <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);background:rgba(163,45,45,.9);padding:2px 8px;border-radius:6px;display:flex;align-items:center;gap:4px">
+                <div style="width:5px;height:5px;border-radius:50%;background:#F7C1C1"></div>
+                <span style="color:#FCEBEB;font-size:9px;font-weight:500">LIVE</span>
+              </div>
+              <span style="position:absolute;bottom:6px;right:8px;color:#5F5E5A;font-size:9px">YOLO v8</span>
+            </div>
+            <div style="padding:8px 14px;background:#0F1620;border-top:0.5px solid #1D4E34">
+              <p style="font-size:9px;color:#5DCAA5;margin:0 0 2px">🔊 Audio Feedback</p>
+              <p style="font-size:11px;color:#9FE1CB;margin:0">"Person ahead, chair to your right"</p>
+            </div>
+            <div style="padding:10px 14px;display:flex;align-items:center;justify-content:space-between">
+              <button style="background:#1a1f2e;border:0.5px solid #2C2C2A;border-radius:10px;padding:6px 12px;color:#D3D1C7;font-size:11px">← Back</button>
+              <div style="text-align:center"><p style="font-size:9px;color:#5F5E5A;margin:0">Detected</p><p style="font-size:16px;font-weight:500;color:#E6F1FB;margin:0">3</p></div>
+              <button style="background:#A32D2D;border:none;border-radius:10px;padding:6px 12px;color:#FCEBEB;font-size:11px">SOS 🚨</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="info-bar">
+      <p class="info-desc">Live YOLO bounding boxes with confidence scores. Audio feedback in Urdu/English.</p>
+      <div class="info-tags"><span class="tag blue">YOLO v8</span><span class="tag grn">Audio</span><span class="tag amb">Bilingual</span></div>
+    </div>
+    <button class="dl-btn" onclick="downloadScreen(2,'S3_Camera_Detection')">⬇ Download S3 — Camera</button>
+  </div>
+
+  <!-- S4 Contacts -->
+  <div class="screen-card" id="card-3">
+    <div class="card-header"><span class="card-title">S4 — Emergency Contacts</span><span class="card-num">4/10</span></div>
+    <div class="phone-wrap">
+      <div class="phone" id="phone-3">
+        <div class="pscreen" style="background:#0a0a14">
+          <div class="notch"></div>
+          <div style="padding:42px 14px 12px;display:flex;flex-direction:column;height:100%;box-sizing:border-box">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+              <p style="font-size:14px;font-weight:500;color:#F1EFE8;margin:0">Emergency Contacts</p>
+              <button style="background:#185FA5;border:none;border-radius:8px;padding:5px 10px;color:#E6F1FB;font-size:11px">+ Add</button>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px;flex:1">
+              <div style="background:#0F1620;border-radius:14px;padding:11px 13px;border:0.5px solid #1D4E34;display:flex;align-items:center;gap:10px">
+                <div style="width:36px;height:36px;border-radius:50%;background:#5DCAA5;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:#04342C">AB</div>
+                <div style="flex:1"><p style="font-size:12px;font-weight:500;color:#E1F5EE;margin:0">Ahmad Bhai</p><p style="font-size:10px;color:#5DCAA5;margin:0">Family</p></div>
+                <div style="width:32px;height:32px;border-radius:9px;background:#1D4E34;display:flex;align-items:center;justify-content:center;font-size:16px">📞</div>
+              </div>
+              <div style="background:#0F1620;border-radius:14px;padding:11px 13px;border:0.5px solid #3B2E00;display:flex;align-items:center;gap:10px">
+                <div style="width:36px;height:36px;border-radius:50%;background:#EF9F27;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:#412402">SA</div>
+                <div style="flex:1"><p style="font-size:12px;font-weight:500;color:#FAEEDA;margin:0">Sara Auntie</p><p style="font-size:10px;color:#FAC775;margin:0">Caregiver</p></div>
+                <div style="width:32px;height:32px;border-radius:9px;background:#3B2E00;display:flex;align-items:center;justify-content:center;font-size:16px">📞</div>
+              </div>
+              <div style="background:#140d0d;border-radius:14px;padding:11px 13px;border:0.5px solid #A32D2D;display:flex;align-items:center;gap:10px">
+                <div style="width:36px;height:36px;border-radius:50%;background:#E24B4A;display:flex;align-items:center;justify-content:center;font-size:16px">🚨</div>
+                <div style="flex:1"><p style="font-size:12px;font-weight:500;color:#FCEBEB;margin:0">Rescue 1122</p><p style="font-size:10px;color:#F09595;margin:0">Emergency</p></div>
+                <div style="width:32px;height:32px;border-radius:9px;background:#A32D2D;display:flex;align-items:center;justify-content:center;font-size:16px">📞</div>
+              </div>
+            </div>
+            <button style="width:100%;padding:13px;background:#A32D2D;border:none;border-radius:13px;color:#FCEBEB;font-size:14px;font-weight:500;margin-top:10px">🚨 Send SOS to All</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="info-bar">
+      <p class="info-desc">Colour-coded contacts. One-tap call. "Send SOS to All" broadcasts GPS location.</p>
+      <div class="info-tags"><span class="tag red">SOS broadcast</span><span class="tag grn">1122 Rescue</span><span class="tag blue">GPS</span></div>
+    </div>
+    <button class="dl-btn" onclick="downloadScreen(3,'S4_Emergency_Contacts')">⬇ Download S4 — Contacts</button>
+  </div>
+
+  <!-- S5 Chatbot -->
+  <div class="screen-card" id="card-4">
+    <div class="card-header"><span class="card-title">S5 — AI Chatbot (Bilingual)</span><span class="card-num">5/10</span></div>
+    <div class="phone-wrap">
+      <div class="phone" id="phone-4">
+        <div class="pscreen" style="background:#0a0a14">
+          <div class="notch"></div>
+          <div style="padding:42px 12px 12px;display:flex;flex-direction:column;height:100%;box-sizing:border-box">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+              <div style="width:30px;height:30px;border-radius:50%;background:#185FA5;display:flex;align-items:center;justify-content:center;font-size:14px">🤖</div>
+              <div><p style="font-size:12px;font-weight:500;color:#E6F1FB;margin:0">Basira AI</p><p style="font-size:9px;color:#5DCAA5;margin:0">Urdu / English</p></div>
+              <div style="margin-left:auto;background:#1D4E34;border-radius:7px;padding:4px 8px;font-size:12px">🎤</div>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;gap:7px;overflow:hidden">
+              <div style="align-self:flex-start;max-width:82%"><div style="background:#1a2030;border-radius:0 10px 10px 10px;padding:7px 10px"><p style="font-size:10px;color:#9FE1CB;margin:0 0 2px">آپ کا استقبال ہے</p><p style="font-size:11px;color:#D3D1C7;margin:0">Aap ka rasta kaise hai?</p></div></div>
+              <div style="align-self:flex-end;max-width:82%"><div style="background:#185FA5;border-radius:10px 0 10px 10px;padding:7px 10px"><p style="font-size:11px;color:#E6F1FB;margin:0">Mere samne kya hai?</p></div></div>
+              <div style="align-self:flex-start;max-width:85%"><div style="background:#1a2030;border-radius:0 10px 10px 10px;padding:7px 10px"><p style="font-size:11px;color:#D3D1C7;margin:0">Ek wooden chair 2 meter door hai. Dayyein taraf darwaza hai.</p></div></div>
+              <div style="align-self:flex-end;max-width:82%"><div style="background:#185FA5;border-radius:10px 0 10px 10px;padding:7px 10px"><p style="font-size:11px;color:#E6F1FB;margin:0">Is there a person nearby?</p></div></div>
+              <div style="align-self:flex-start"><div style="background:#1D4E34;border-radius:0 10px 10px 10px;padding:7px 10px;display:flex;gap:5px;align-items:center"><span style="font-size:11px;color:#9FE1CB">⏳ Analyzing scene…</span></div></div>
+            </div>
+            <div style="margin-top:8px;background:#0F1620;border-radius:12px;padding:9px 11px;display:flex;align-items:center;gap:7px;border:0.5px solid #185FA5">
+              <div style="flex:1"><div style="width:7px;height:7px;border-radius:50%;background:#E24B4A;display:inline-block;margin-right:5px"></div><span style="font-size:10px;color:#85B7EB">Hold to speak…</span></div>
+              <div style="width:30px;height:30px;border-radius:50%;background:#185FA5;display:flex;align-items:center;justify-content:center;font-size:14px">🎤</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="info-bar">
+      <p class="info-desc">Long-press to speak in Urdu/English. LLM replies with scene context via TTS.</p>
+      <div class="info-tags"><span class="tag blue">OpenAI LLM</span><span class="tag amb">Urdu+EN</span><span class="tag grn">ElevenLabs</span></div>
+    </div>
+    <button class="dl-btn" onclick="downloadScreen(4,'S5_AI_Chatbot')">⬇ Download S5 — Chatbot</button>
+  </div>
+
+  <!-- S6 SOS Triggered -->
+  <div class="screen-card" id="card-5">
+    <div class="card-header"><span class="card-title">S6 — SOS Triggered</span><span class="card-num">6/10</span></div>
+    <div class="phone-wrap">
+      <div class="phone" id="phone-5">
+        <div class="pscreen" style="background:#0d0000">
+          <div class="notch"></div>
+          <div style="padding:42px 14px 14px;display:flex;flex-direction:column;align-items:center;height:100%;box-sizing:border-box">
+            <div style="width:68px;height:68px;border-radius:50%;background:#A32D2D;display:flex;align-items:center;justify-content:center;margin-bottom:10px;border:2.5px solid #E24B4A;font-size:32px">🚨</div>
+            <p style="font-size:16px;font-weight:500;color:#FCEBEB;margin:0 0 3px">SOS Alert Sent!</p>
+            <p style="font-size:10px;color:#F09595;margin:0 0 16px;text-align:center">Aapka location share ho gaya</p>
+            <div style="width:100%;background:#1a0505;border-radius:12px;padding:10px 12px;margin-bottom:8px;border:0.5px solid #A32D2D">
+              <p style="font-size:9px;color:#F09595;margin:0 0 4px">GPS Coordinates</p>
+              <p style="font-size:11px;color:#FCEBEB;margin:0;font-family:monospace">31.5204° N, 74.3587° E</p>
+              <p style="font-size:9px;color:#F09595;margin:3px 0 0">DHA Phase 6, Lahore · Accuracy: 5m</p>
+            </div>
+            <div style="width:100%;margin-bottom:8px;display:flex;flex-direction:column;gap:5px">
+              <div style="background:#1a0505;border-radius:9px;padding:7px 11px;display:flex;align-items:center;gap:7px;border:0.5px solid #1D4E34">
+                <div style="width:22px;height:22px;border-radius:50%;background:#5DCAA5;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:500;color:#04342C">AB</div>
+                <p style="font-size:11px;color:#E1F5EE;margin:0;flex:1">Ahmad Bhai</p>
+                <span style="font-size:12px">✅</span>
+              </div>
+              <div style="background:#1a0505;border-radius:9px;padding:7px 11px;display:flex;align-items:center;gap:7px;border:0.5px solid #1D4E34">
+                <div style="width:22px;height:22px;border-radius:50%;background:#EF9F27;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:500;color:#412402">SA</div>
+                <p style="font-size:11px;color:#FAEEDA;margin:0;flex:1">Sara Auntie</p>
+                <span style="font-size:12px">✅</span>
+              </div>
+            </div>
+            <div style="width:100%;background:#1D4E34;border-radius:10px;padding:9px 12px;display:flex;align-items:center;gap:7px;margin-bottom:8px">
+              <span style="font-size:14px">📞</span>
+              <p style="font-size:11px;color:#E1F5EE;margin:0">Ahmad Bhai is calling…</p>
+            </div>
+            <button style="width:100%;padding:11px;background:#444441;border:none;border-radius:11px;color:#D3D1C7;font-size:13px">Cancel SOS</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="info-bar">
+      <p class="info-desc">Shown after triple-tap/voice SOS. GPS captured, contacts notified via Supabase.</p>
+      <div class="info-tags"><span class="tag red">GPS broadcast</span><span class="tag red">Supabase</span><span class="tag grn">Haptic</span></div>
+    </div>
+    <button class="dl-btn" onclick="downloadScreen(5,'S6_SOS_Triggered')">⬇ Download S6 — SOS</button>
+  </div>
+
+  <!-- S7 Caregiver Map -->
+  <div class="screen-card" id="card-6">
+    <div class="card-header"><span class="card-title">S7 — Caregiver Live Map</span><span class="card-num">7/10</span></div>
+    <div class="phone-wrap">
+      <div class="phone" id="phone-6">
+        <div class="pscreen" style="background:#0a0a14">
+          <div class="notch"></div>
+          <div style="padding:42px 0 0;height:100%;box-sizing:border-box;display:flex;flex-direction:column">
+            <div style="padding:0 13px 8px;display:flex;align-items:center;justify-content:space-between">
+              <div><p style="font-size:10px;color:#5F5E5A;margin:0">Caregiver View</p><p style="font-size:13px;font-weight:500;color:#E6F1FB;margin:0">Naqeeb's Location</p></div>
+              <div style="background:#A32D2D;border-radius:7px;padding:4px 9px;display:flex;align-items:center;gap:4px">
+                <div style="width:5px;height:5px;border-radius:50%;background:#FCEBEB"></div>
+                <span style="font-size:9px;color:#FCEBEB;font-weight:500">LIVE SOS</span>
+              </div>
+            </div>
+            <div style="flex:1;background:#1a2235;position:relative;overflow:hidden">
+              <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs><pattern id="g2" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0L0 0 0 25" fill="none" stroke="#1e2d45" stroke-width="0.5"/></pattern></defs>
+                <rect width="100%" height="100%" fill="url(#g2)"/>
+                <rect x="0" y="95" width="220" height="7" fill="#243350" rx="2"/>
+                <rect x="0" y="155" width="220" height="7" fill="#243350" rx="2"/>
+                <rect x="60" y="0" width="7" height="240" fill="#243350" rx="2"/>
+                <rect x="145" y="0" width="7" height="240" fill="#243350" rx="2"/>
+                <rect x="8" y="8" width="47" height="82" fill="#1e2d45" rx="3"/>
+                <rect x="68" y="8" width="72" height="82" fill="#1e2d45" rx="3"/>
+                <rect x="153" y="8" width="60" height="82" fill="#1e2d45" rx="3"/>
+                <circle cx="110" cy="97" r="16" fill="#E24B4A" opacity=".2"/>
+                <circle cx="110" cy="97" r="9" fill="#E24B4A" opacity=".4"/>
+                <circle cx="110" cy="97" r="5" fill="#E24B4A"/>
+                <circle cx="110" cy="97" r="2.5" fill="#FCEBEB"/>
+                <circle cx="110" cy="97" r="22" fill="none" stroke="#E24B4A" stroke-width="1" stroke-dasharray="3 2" opacity=".4"/>
+              </svg>
+              <div style="position:absolute;bottom:8px;right:8px;background:#0a0a14cc;border-radius:7px;padding:4px 7px"><p style="font-size:8px;color:#85B7EB;margin:0">DHA Phase 6, Lahore</p></div>
+            </div>
+            <div style="padding:9px 13px 12px;background:#0F1620;border-top:0.5px solid #1a2a3a">
+              <div style="display:flex;justify-content:space-between;margin-bottom:8px">
+                <div><p style="font-size:9px;color:#5F5E5A;margin:0">Last updated</p><p style="font-size:11px;color:#D3D1C7;margin:0">30 sec ago</p></div>
+                <div style="text-align:right"><p style="font-size:9px;color:#5F5E5A;margin:0">Battery</p><p style="font-size:11px;color:#5DCAA5;margin:0">74%</p></div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px">
+                <button style="padding:9px;background:#185FA5;border:none;border-radius:10px;color:#E6F1FB;font-size:11px">📞 Call Now</button>
+                <button style="padding:9px;background:#1D4E34;border:none;border-radius:10px;color:#9FE1CB;font-size:11px">🧭 Navigate</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="info-bar">
+      <p class="info-desc">Caregiver sees live GPS pin, 30-sec Supabase sync, one-tap call & navigate.</p>
+      <div class="info-tags"><span class="tag blue">Google Maps</span><span class="tag grn">30s sync</span><span class="tag red">Live SOS</span></div>
+    </div>
+    <button class="dl-btn" onclick="downloadScreen(6,'S7_Caregiver_Map')">⬇ Download S7 — Caregiver</button>
+  </div>
+
+  <!-- S8 Warning -->
+  <div class="screen-card" id="card-7">
+    <div class="card-header"><span class="card-title">S8 — System Warning</span><span class="card-num">8/10</span></div>
+    <div class="phone-wrap">
+      <div class="phone" id="phone-7">
+        <div class="pscreen" style="background:#0a0800">
+          <div class="notch"></div>
+          <div style="padding:42px 14px 14px;display:flex;flex-direction:column;align-items:center;height:100%;box-sizing:border-box">
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;width:100%">
+              <div style="width:62px;height:62px;border-radius:50%;background:#3B2E00;display:flex;align-items:center;justify-content:center;border:2px solid #EF9F27;font-size:28px">⚠️</div>
+              <p style="font-size:16px;font-weight:500;color:#FAEEDA;margin:0;text-align:center">System Warning</p>
+              <div style="width:100%;display:flex;flex-direction:column;gap:7px">
+                <div style="background:#1a1200;border-radius:11px;padding:10px 12px;border:0.5px solid #EF9F27;display:flex;align-items:center;gap:8px">
+                  <span style="font-size:18px">📷</span>
+                  <div><p style="font-size:11px;color:#FAEEDA;margin:0;font-weight:500">Camera Obstructed</p><p style="font-size:10px;color:#BA7517;margin:0">Detection paused</p></div>
+                </div>
+                <div style="background:#1a0505;border-radius:11px;padding:10px 12px;border:0.5px solid #A32D2D;display:flex;align-items:center;gap:8px">
+                  <span style="font-size:18px">📍</span>
+                  <div><p style="font-size:11px;color:#FCEBEB;margin:0;font-weight:500">GPS Signal Lost</p><p style="font-size:10px;color:#A32D2D;margin:0">Location sharing paused</p></div>
+                </div>
+              </div>
+              <div style="background:#0F1620;border-radius:11px;padding:9px 12px;width:100%;border:0.5px solid #185FA5">
+                <p style="font-size:9px;color:#85B7EB;margin:0 0 3px">🔊 Audio playing:</p>
+                <p style="font-size:10px;color:#B5D4F4;margin:0">"Camera band hai. Lens saaf karein."</p>
+              </div>
+              <button style="width:100%;padding:12px;background:#185FA5;border:none;border-radius:12px;color:#E6F1FB;font-size:13px;font-weight:500">Retry Detection</button>
+              <button style="width:100%;padding:11px;background:#A32D2D;border:none;border-radius:12px;color:#FCEBEB;font-size:12px">🚨 Send SOS Anyway</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="info-bar">
+      <p class="info-desc">Camera/GPS failure alerts with Urdu audio. SOS override always available.</p>
+      <div class="info-tags"><span class="tag amb">Camera off</span><span class="tag red">GPS lost</span><span class="tag blue">Urdu audio</span></div>
+    </div>
+    <button class="dl-btn" onclick="downloadScreen(7,'S8_Warning')">⬇ Download S8 — Warning</button>
+  </div>
+
+</div>
+
+<div class="group-label">Group B — Admin panel screens (S9–S10)</div>
+<div class="screens-grid">
+
+  <!-- S9 Admin Dashboard -->
+  <div class="screen-card wide-card" id="card-8">
+    <div class="card-header"><span class="card-title">S9 — Admin Dashboard</span><span class="card-num">9/10</span></div>
+    <div class="admin-wrap">
+      <div class="admin-frame" id="phone-8">
+        <div class="admin-bar">
+          <div style="display:flex;align-items:center;gap:9px"><span style="font-size:16px">👁</span><span style="font-size:13px;font-weight:500;color:#E6F1FB">Basira Admin Panel</span></div>
+          <div style="display:flex;align-items:center;gap:10px"><span style="font-size:11px;color:#85B7EB">admin@basira.pk</span><div style="width:26px;height:26px;border-radius:50%;background:#185FA5;display:flex;align-items:center;justify-content:center;font-size:12px">👤</div></div>
+        </div>
+        <div class="admin-body">
+          <div class="admin-sidebar">
+            <div class="a-item active">📊 <span>Dashboard</span></div>
+            <div class="a-item">👥 <span>Users</span></div>
+            <div class="a-item">🚨 <span>SOS Logs</span></div>
+            <div class="a-item">📰 <span>Resources</span></div>
+            <div class="a-item">⚙️ <span>Settings</span></div>
+          </div>
+          <div class="admin-content">
+            <div class="stat-grid">
+              <div class="stat"><div class="stat-label">Total Users</div><div class="stat-val">142</div><div class="stat-sub">+8 this week</div></div>
+              <div class="stat"><div class="stat-label">Caregivers</div><div class="stat-val">89</div><div class="stat-sub" style="color:#85B7EB">Active</div></div>
+              <div class="stat" style="background:#140d0d;border-color:#A32D2D"><div class="stat-label" style="color:#F09595">SOS Today</div><div class="stat-val">3</div><div class="stat-sub" style="color:#A32D2D">2 resolved</div></div>
+              <div class="stat" style="border-color:#1D4E34"><div class="stat-label">Uptime</div><div class="stat-val" style="color:#5DCAA5">99.2%</div><div class="stat-sub" style="color:#1D9E75">30 days</div></div>
+            </div>
+            <p style="font-size:11px;font-weight:500;color:#B4B2A9;margin:0 0 7px">Recent SOS alerts</p>
+            <div style="background:#0F1620;border-radius:9px;border:0.5px solid #1a2a3a;overflow:hidden">
+              <div style="display:grid;grid-template-columns:1fr 1fr 70px 65px;padding:7px 11px;border-bottom:0.5px solid #1a2a3a">
+                <span style="font-size:9px;color:#5F5E5A">User</span><span style="font-size:9px;color:#5F5E5A">Location</span><span style="font-size:9px;color:#5F5E5A">Time</span><span style="font-size:9px;color:#5F5E5A">Status</span>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr 70px 65px;padding:7px 11px;border-bottom:0.5px solid #0d1525;align-items:center">
+                <span style="font-size:10px;color:#D3D1C7">Naqeeb A.</span><span style="font-size:10px;color:#D3D1C7">DHA Phase 6</span><span style="font-size:10px;color:#D3D1C7">09:14</span><span style="font-size:9px;background:#1D4E34;color:#9FE1CB;padding:2px 6px;border-radius:5px">Resolved</span>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr 70px 65px;padding:7px 11px;border-bottom:0.5px solid #0d1525;align-items:center">
+                <span style="font-size:10px;color:#D3D1C7">Khalid M.</span><span style="font-size:10px;color:#D3D1C7">Gulberg III</span><span style="font-size:10px;color:#D3D1C7">11:52</span><span style="font-size:9px;background:#A32D2D;color:#FCEBEB;padding:2px 6px;border-radius:5px">Active</span>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr 70px 65px;padding:7px 11px;align-items:center">
+                <span style="font-size:10px;color:#D3D1C7">Fatima Z.</span><span style="font-size:10px;color:#D3D1C7">Model Town</span><span style="font-size:10px;color:#D3D1C7">14:07</span><span style="font-size:9px;background:#1D4E34;color:#9FE1CB;padding:2px 6px;border-radius:5px">Resolved</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="info-bar">
+      <p class="info-desc">Admin sees user count, caregiver count, SOS stats & uptime. Full user/SOS/resource management via sidebar (UC-04, UC-05, UC-06).</p>
+      <div class="info-tags"><span class="tag blue">Supabase</span><span class="tag grn">99.2% uptime</span><span class="tag red">SOS logs</span><span class="tag amb">User mgmt</span></div>
+    </div>
+    <button class="dl-btn" onclick="downloadScreen(8,'S9_Admin_Dashboard')">⬇ Download S9 — Admin Dashboard</button>
+  </div>
+
+  <!-- S10 Resource Hub mobile -->
+  <div class="screen-card" id="card-9">
+    <div class="card-header"><span class="card-title">S10 — Resource Hub (Mobile)</span><span class="card-num">10/10</span></div>
+    <div class="phone-wrap">
+      <div class="phone" id="phone-9">
+        <div class="pscreen" style="background:#0a0a14">
+          <div class="notch"></div>
+          <div style="padding:42px 13px 13px;display:flex;flex-direction:column;height:100%;box-sizing:border-box">
+            <div style="display:flex;align-items:center;gap:7px;margin-bottom:12px">
+              <span style="font-size:16px">📰</span>
+              <p style="font-size:14px;font-weight:500;color:#E6F1FB;margin:0">Resource Hub</p>
+              <div style="margin-left:auto;width:7px;height:7px;border-radius:50%;background:#5DCAA5"></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px;flex:1;overflow:hidden">
+              <div style="background:#071525;border-radius:12px;padding:10px 12px;border:0.5px solid #1D4E34">
+                <div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:9px;background:#1D4E34;color:#9FE1CB;padding:2px 7px;border-radius:5px">Welfare</span><span style="font-size:9px;color:#5F5E5A">2 May 2026</span></div>
+                <p style="font-size:11px;color:#D3D1C7;margin:0 0 6px">Punjab free assistive device scheme — visually impaired citizens apply now.</p>
+                <div style="background:#0d1e12;border-radius:7px;padding:6px 9px;display:flex;align-items:center;gap:5px"><span style="font-size:11px">🔊</span><p style="font-size:9px;color:#9FE1CB;margin:0">Sun'nay ke liye tap karein</p></div>
+              </div>
+              <div style="background:#071525;border-radius:12px;padding:10px 12px;border:0.5px solid #185FA5">
+                <div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:9px;background:#0C447C;color:#85B7EB;padding:2px 7px;border-radius:5px">Emergency</span><span style="font-size:9px;color:#5F5E5A">8 May 2026</span></div>
+                <p style="font-size:11px;color:#D3D1C7;margin:0 0 6px">Rescue 1122 Lahore 24/7 hotline for special needs citizens.</p>
+                <div style="background:#071525;border-radius:7px;padding:6px 9px;display:flex;align-items:center;gap:5px;border:0.5px solid #185FA5"><span style="font-size:11px">🔊</span><p style="font-size:9px;color:#85B7EB;margin:0">Sun'nay ke liye tap karein</p></div>
+              </div>
+              <div style="background:#071525;border-radius:12px;padding:10px 12px;border:0.5px solid #3B2E00">
+                <div style="display:flex;justify-content:space-between;margin-bottom:5px"><span style="font-size:9px;background:#3B2E00;color:#FAC775;padding:2px 7px;border-radius:5px">Education</span><span style="font-size:9px;color:#5F5E5A">1 May 2026</span></div>
+                <p style="font-size:11px;color:#D3D1C7;margin:0 0 6px">Riphah University Braille workshops — register before 15 May.</p>
+                <div style="background:#1a1200;border-radius:7px;padding:6px 9px;display:flex;align-items:center;gap:5px"><span style="font-size:11px">🔊</span><p style="font-size:9px;color:#FAC775;margin:0">Sun'nay ke liye tap karein</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="info-bar">
+      <p class="info-desc">Admin-published welfare/emergency/education cards. Each card plays Urdu TTS when tapped (UC-06).</p>
+      <div class="info-tags"><span class="tag amb">Admin published</span><span class="tag grn">Audio cards</span><span class="tag blue">Urdu TTS</span></div>
+    </div>
+    <button class="dl-btn" onclick="downloadScreen(9,'S10_Resource_Hub')">⬇ Download S10 — Resources</button>
+  </div>
+
+</div>
+
+<script>
+async function downloadScreen(idx, name) {
+  const el = document.getElementById('phone-' + idx);
+  if (!el) return;
+  const btn = event.target;
+  btn.textContent = '⏳ Capturing…';
+  btn.disabled = true;
+  try {
+    const canvas = await html2canvas(el, {
+      scale: 3,
+      backgroundColor: null,
+      useCORS: true,
+      logging: false
+    });
+    const link = document.createElement('a');
+    link.download = 'Basira_' + name + '.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+    btn.textContent = '✅ Downloaded!';
+    setTimeout(() => { btn.textContent = '⬇ Download ' + name.replace(/_/g,' '); btn.disabled = false; }, 2000);
+  } catch(e) {
+    btn.textContent = '❌ Error — try again';
+    btn.disabled = false;
+  }
+}
+
+async function downloadAll() {
+  const btn = document.querySelector('.dl-all');
+  btn.textContent = '⏳ Downloading all…';
+  btn.disabled = true;
+  const names = ['S1_Login','S2_Dashboard','S3_Camera_Detection','S4_Emergency_Contacts','S5_AI_Chatbot','S6_SOS_Triggered','S7_Caregiver_Map','S8_Warning','S9_Admin_Dashboard','S10_Resource_Hub'];
+  for (let i = 0; i < 10; i++) {
+    btn.textContent = `⏳ Capturing ${i+1}/10…`;
+    const el = document.getElementById('phone-' + i);
+    if (!el) continue;
+    try {
+      const canvas = await html2canvas(el, { scale: 3, backgroundColor: null, useCORS: true, logging: false });
+      const link = document.createElement('a');
+      link.download = 'Basira_' + names[i] + '.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+      await new Promise(r => setTimeout(r, 600));
+    } catch(e) { console.error(e); }
+  }
+  btn.textContent = '✅ All Downloaded!';
+  setTimeout(() => { btn.textContent = '⬇ Download All (PNG)'; btn.disabled = false; }, 3000);
+}
+</script>
+</body>
+</html>
